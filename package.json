@@ -4,15 +4,13 @@
   "description": "A simple Brain Games project",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ."
-  },
-  "author": "",
-  "license": "ISC",
-    "bin": {
-    "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
@@ -24,3 +22,4 @@
   },
   "keywords": []
 }
+
