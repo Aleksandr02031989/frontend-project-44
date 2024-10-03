@@ -1,4 +1,4 @@
-import getRandomInt from '../utils.js'; // Импортируем утилиту для генерации случайных чисел
+import getRandomInt from '../utils.js'; 
 
 const operations = ['+', '-', '*'];
 
@@ -8,7 +8,7 @@ const generateCalcQuestion = () => {
     const operation = operations[getRandomInt(0, operations.length - 1)];
 
     const question = `${num1} ${operation} ${num2}`;
-    const correctAnswer = eval(question); // Используем eval для вычисления
+    const correctAnswer = eval(question); 
 
     return { question, correctAnswer: String(correctAnswer) };
 };

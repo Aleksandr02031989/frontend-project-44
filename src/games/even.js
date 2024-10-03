@@ -1,33 +1,24 @@
-import readlineSync from 'readline-sync';
-import { getRandomNumber } from '../utils.js'; // Предположим, что есть утилита для генерации случайных чисел
+export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const roundsCount = 3;
-
-const isEven = (num) => num % 2 === 0;
-
-const startEvenGame = () => {
+export const runGame = (description, generateRound) => {
   console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  const name = 'Sam';
+  console.log(`Hello, ${name}!`);
+  console.log(description);
 
-  for (let round = 0; round < roundsCount; round += 1) {
-    const number = getRandomNumber(1, 100); // Генерация случайного числа от 1 до 100
-    console.log(`Question: ${number}`);
-    const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
-    const correctAnswer = isEven(number) ? 'yes' : 'no';
-
+  const rounds = 3;
+  for (let i = 0; i < rounds; i++) {
+    const [question, correctAnswer] = generateRound();
+    console.log(`Question: ${question}`);
+    const userAnswer = '25'; 
+    
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${userName}!`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
-
     console.log('Correct!');
   }
-
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${name}!`);
 };
-
-export default startEvenGame;
 
