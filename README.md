@@ -3,3 +3,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/7084bfa50141d16566b7/maintainability)](https://codeclimate.com/github/Aleksandr02031989/frontend-project-44/maintainability)
 [Пример игры на asciinema](https://asciinema.org/a/PeJf8xa9MeqOsukp8kHv8ibgG)
 [Пример игры калькулятор](https://asciinema.org/a/u3chN0mXWcM46t82Az3m6hP0u)
+[Пример игры Арифметическая прогрессия]( https://asciinema.org/a/bdlWYB0KlLYH7Sw3w2oYf4mlm)
