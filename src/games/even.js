@@ -15,4 +15,4 @@ const runEvenGame = () => {
   startGame(description, generateRound);
 };
 
-export {runEvenGame};
+export default {runEvenGame};
