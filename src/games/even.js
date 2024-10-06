@@ -1,4 +1,4 @@
-const runEvenGame = () => {
+export const runEvenGame = () => {
   const description = 'Answer "yes" if the number is even, otherwise answer "no".';
   
   const generateRound = () => {
@@ -10,7 +10,6 @@ const runEvenGame = () => {
   runGame(description, generateRound);
 };
 
-export default runEvenGame;
 
 export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
