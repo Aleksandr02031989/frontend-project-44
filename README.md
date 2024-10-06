@@ -4,3 +4,4 @@
 [Пример игры на asciinema](https://asciinema.org/a/PeJf8xa9MeqOsukp8kHv8ibgG)
 [Пример игры калькулятор](https://asciinema.org/a/u3chN0mXWcM46t82Az3m6hP0u)
 [Пример игры Арифметическая прогрессия]( https://asciinema.org/a/bdlWYB0KlLYH7Sw3w2oYf4mlm)
+[Пример игры простое ли число]( https://asciinema.org/a/FFiR5sJYAvGAo41kZMLYnn0jF)
