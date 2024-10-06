@@ -2,7 +2,16 @@ import readlineSync from 'readline-sync';
 
 const totalRounds = 3;
 
-const startGame = (generateQuestion) => {
+const generateQuestion = () => {
+    const number = Math.floor(Math.random() * 100);
+    const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
+    return {
+        question: number, // Выводим только число
+        correctAnswer: correctAnswer,
+    };
+};
+
+const startGame = () => {
     console.log('Welcome to the Brain Games!');
     const name = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${name}!`);
@@ -10,7 +19,7 @@ const startGame = (generateQuestion) => {
 
     for (let i = 0; i < totalRounds; i += 1) {
         const { question, correctAnswer } = generateQuestion();
-        console.log(`Question: ${question}`);
+        console.log(`Question: ${question}`); // Убедитесь, что формат 'Question: <число>'
         const userAnswer = readlineSync.question('Your answer: ');
 
         if (userAnswer !== correctAnswer) {
@@ -24,4 +33,3 @@ const startGame = (generateQuestion) => {
 };
 
 export default startGame;
-
