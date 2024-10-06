@@ -11,8 +11,8 @@ const generateRound = () => {
   return [question, answer];
 };
 
-const launchGame = () => {
+const runEvenGame = () => {
   startGame(description, generateRound);
 };
 
-export default launchGame;
+export {runEvenGame};
