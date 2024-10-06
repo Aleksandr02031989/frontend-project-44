@@ -23,5 +23,5 @@ const startGame = (generateQuestion) => {
     console.log(`Congratulations, ${name}!`);
 };
 
-export { startGame };
+export default  startGame ;
 
