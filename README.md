@@ -13,7 +13,6 @@ $npm ci
 ```
 ## Games
 ### Game "Even parity"
-### Game "Even parity"
 ```
 $ brain-even
 ```
@@ -35,7 +34,7 @@ The user is shown a raw of numbers forming an arithmetic progression, in which o
 ```
 $ brain-progression
 ```
-
+[![asciicast](https://asciinema.org/a/0Yo2aS1gxPXUCskeWgyp8E8vm.svg)](https://asciinema.org/a/0Yo2aS1gxPXUCskeWgyp8E8vm)
 ### Game "Is the number prime?"
 The user is shown a random number. he needs to answer whether it is prime or not.
 ```
