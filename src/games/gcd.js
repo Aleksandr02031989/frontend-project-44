@@ -7,7 +7,6 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
-// Генерация раунда игры
 const generateRound = () => {
   const num1 = getRandomInt(1, 100); 
   const num2 = getRandomInt(1, 100);
