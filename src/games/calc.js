@@ -1,6 +1,7 @@
-import getRandomInt from '../utils.js';
-// Функция для вычисления результата
-const calculate = (num1, num2, operator) => {
+import getRandomInRange, { randomIndex } from '../utils.js';
+import runEngine from '../index.js';
+
+const calculation = (operator, num1, num2) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -9,42 +10,24 @@ const calculate = (num1, num2, operator) => {
     case '*':
       return num1 * num2;
     default:
-      throw new Error(`Unknown operator: '${operator}'`);
+      throw new Error(`Invalid operator - ${operator}`);
   }
 };
 
-const startGame = () => {
-  console.log('Welcome to the Brain Games!');
-  
-  const name = prompt('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  
-  console.log('What is the result of the expression?');
-
+const generateRound = () => {
   const operators = ['+', '-', '*'];
-  const maxRounds = 3;
 
-  for (let round = 1; round <= maxRounds; round += 1) {
-    const num1 = getRandomInt(1, 100);
-    const num2 = getRandomInt(1, 100);
-    const operator = operators[getRandomInt(0, operators.length - 1)];
-
-    const correctAnswer = calculate(num1, num2, operator);
-
-    console.log(`Question: ${num1} ${operator} ${num2}`);
-    
-    const userAnswer = prompt('Your answer: ');
-    
-    if (Number(userAnswer) !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-
-    console.log('Correct!');
-  }
-
-  console.log(`Congratulations, ${name}!`);
+  const number1 = getRandomInRange(1, 100);
+  const operator = operators[randomIndex(operators)];
+  const number2 = getRandomInRange(1, 100);
+  const question = `${number1} ${operator} ${number2}`;
+  const answer = String(calculation(operator, number1, number2));
+  return [question, answer];
 };
 
-export default startGame;
+const brainCalc = () => {
+  const rules = 'What is the result of the expression?';
+  runEngine(rules, generateRound);
+};
+
+export default brainCalc;

@@ -1,20 +1,31 @@
-import { getRandomInt, runGame } from '../utils.js'; 
+import getRandomInRange from '../utils.js';
+import runEngine from '../index.js';
 
-const description = 'Find the greatest common divisor of given numbers.';
-
-const gcd = (a, b) => {
-  if (b === 0) return a;
-  return gcd(b, a % b);
+const findDivisor = (num1, num2) => {
+  let a = num1;
+  let b = num2;
+  while (a !== b) {
+    if (a > b) {
+      a -= b;
+    } else {
+      b -= a;
+    }
+  }
+  const gcd = a;
+  return gcd;
 };
 
 const generateRound = () => {
-  const num1 = getRandomInt(1, 100); 
-  const num2 = getRandomInt(1, 100);
-  const question = `${num1} ${num2}`;
-  const correctAnswer = String(gcd(num1, num2));
-  return [question, correctAnswer];
+  const number1 = getRandomInRange(1, 100);
+  const number2 = getRandomInRange(1, 100);
+  const answer = String(findDivisor(number1, number2));
+  const question = `${number1} ${number2}`;
+  return [question, answer];
 };
 
-export default function startGcdGame() {
-  runGame(description, generateRound);
-}
+const brainGcd = () => {
+  const rules = 'Find the greatest common divisor of given numbers.';
+  runEngine(rules, generateRound);
+};
+
+export default brainGcd;
