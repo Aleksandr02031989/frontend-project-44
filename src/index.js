@@ -6,12 +6,12 @@ const generateQuestion = () => {
     const number = Math.floor(Math.random() * 100);
     const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
     return {
-        question: number, // Выводим только число
+        question: number,
         correctAnswer: correctAnswer,
     };
 };
 
-const startGame = () => {
+export const startGame = () => {
     console.log('Welcome to the Brain Games!');
     const name = readlineSync.question('May I have your name? ');
     console.log(`Hello, ${name}!`);
@@ -19,7 +19,7 @@ const startGame = () => {
 
     for (let i = 0; i < totalRounds; i += 1) {
         const { question, correctAnswer } = generateQuestion();
-        console.log(`Question: ${question}`); // Убедитесь, что формат 'Question: <число>'
+        console.log(`Question: ${question}`); 
         const userAnswer = readlineSync.question('Your answer: ');
 
         if (userAnswer !== correctAnswer) {
@@ -31,5 +31,3 @@ const startGame = () => {
     }
     console.log(`Congratulations, ${name}!`);
 };
-
-export default startGame;
