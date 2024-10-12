@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
-
 const roundsCount = 3;
-
 const runEngine = (rules, generateRound) => {
   const name = greeting();
   console.log(rules);
@@ -19,5 +17,4 @@ const runEngine = (rules, generateRound) => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-
 export default runEngine;

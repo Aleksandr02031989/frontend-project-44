@@ -1,6 +1,5 @@
 import getRandomInRange, { randomIndex } from '../utils.js';
 import runEngine from '../index.js';
-
 const generateProgression = (start, step, length) => {
   const progression = [];
   for (let i = 0; i < length; i += 1) {
@@ -8,13 +7,11 @@ const generateProgression = (start, step, length) => {
   }
   return progression;
 };
-
 const modifyArr = (arr, num) => {
   arr.splice(arr.indexOf(num), 1, '..');
   const string = arr.join(' ');
   return string;
 };
-
 const generateRound = () => {
   const start = getRandomInRange(1, 100);
   const step = getRandomInRange(2, 10);
@@ -26,10 +23,8 @@ const generateRound = () => {
   answer = answer.toString();
   return [question, answer];
 };
-
 const brainProgression = () => {
   const rules = 'What number is missing in the progression?';
   runEngine(rules, generateRound);
 };
-
 export default brainProgression;

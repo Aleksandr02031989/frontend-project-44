@@ -2,7 +2,7 @@ import getRandomInRange, { randomIndex } from '../utils.js';
 import runEngine from '../index.js';
 
 const calculation = (operator, num1, num2) => {
-  switch (operator) {
+  switch (operator){
     case '+':
       return num1 + num2;
     case '-':
@@ -29,5 +29,4 @@ const brainCalc = () => {
   const rules = 'What is the result of the expression?';
   runEngine(rules, generateRound);
 };
-
 export default brainCalc;
