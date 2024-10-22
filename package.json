@@ -1,8 +1,13 @@
 {
   "name": "@hexlet/code",
-  "version": "1.1.0",
-  "description": "A simple Brain Games project",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Игры разума — это набор из пяти консольных игр. В каждой игре пользователю задаются вопросы, на которые нужно правильно ответить. После трёх верных ответов подряд игра считается пройденной.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
@@ -11,17 +16,12 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
-  },
   "dependencies": {
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
-    "eslint": "^9.11.1",
-    "globals": "^15.9.0"
-  },
-  "keywords": []
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
+  }
 }

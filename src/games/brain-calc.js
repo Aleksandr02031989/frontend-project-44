@@ -1,32 +1,37 @@
-import getRandomInRange, { randomIndex } from '../utils.js';
-import runEngine from '../index.js';
+import generateRandomNumber from '../utils.js';
+import startGame from '../index.js';
 
-const calculation = (operator, num1, num2) => {
-  switch (operator){
+const operators = ['+', '-', '*'];
+
+const description = 'What is the result of the expression?';
+
+const expressionCalculate = (number1, number2, operator) => {
+  switch (operator) {
     case '+':
-      return num1 + num2;
+      return number1 + number2;
     case '-':
-      return num1 - num2;
+      return number1 - number2;
     case '*':
-      return num1 * num2;
+      return number1 * number2;
     default:
-      throw new Error(`Invalid operator - ${operator}`);
+      return `Error, the operator '${operator} not recognized.`;
   }
 };
 
 const generateRound = () => {
-  const operators = ['+', '-', '*'];
+  const number1 = generateRandomNumber(1, 50);
+  const number2 = generateRandomNumber(1, 50);
 
-  const number1 = getRandomInRange(1, 100);
-  const operator = operators[randomIndex(operators)];
-  const number2 = getRandomInRange(1, 100);
+  const operatorIndex = generateRandomNumber(1, operators.length);
+  const operator = operators[operatorIndex - 1];
+
   const question = `${number1} ${operator} ${number2}`;
-  const answer = String(calculation(operator, number1, number2));
+  const answer = expressionCalculate(number1, number2, operator).toString();
   return [question, answer];
 };
 
-const brainCalc = () => {
-  const rules = 'What is the result of the expression?';
-  runEngine(rules, generateRound);
+const launchGame = () => {
+  startGame(description, generateRound);
 };
-export default brainCalc;
+
+export default launchGame;

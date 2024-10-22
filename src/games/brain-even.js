@@ -1,13 +1,18 @@
-import getRandomInRange from '../utils.js';
-import runEngine from '../index.js';
-const isEven = (num) => num % 2 === 0;
+import generateRandomNumber from '../utils.js';
+import startGame from '../index.js';
+
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (number) => number % 2 === 0;
+
 const generateRound = () => {
-  const number = getRandomInRange(1, 100);
-  const answer = isEven(number) ? 'yes' : 'no';
-  return [number, answer];
+  const question = generateRandomNumber(1, 50);
+  const answer = isEven(question) ? 'yes' : 'no';
+  return [question, answer];
 };
-const brainEven = () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-  runEngine(rules, generateRound);
+
+const launchGame = () => {
+  startGame(description, generateRound);
 };
-export default brainEven;
+
+export default launchGame;

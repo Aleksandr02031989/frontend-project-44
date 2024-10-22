@@ -1,30 +1,34 @@
-import getRandomInRange, { randomIndex } from '../utils.js';
-import runEngine from '../index.js';
-const generateProgression = (start, step, length) => {
-  const progression = [];
-  for (let i = 0; i < length; i += 1) {
-    progression.push(start + step * i);
-  }
-  return progression;
-};
-const modifyArr = (arr, num) => {
-  arr.splice(arr.indexOf(num), 1, '..');
-  const string = arr.join(' ');
-  return string;
-};
-const generateRound = () => {
-  const start = getRandomInRange(1, 100);
-  const step = getRandomInRange(2, 10);
-  const length = getRandomInRange(5, 10);
+import generateRandomNumber from '../utils.js';
+import startGame from '../index.js';
 
-  const progression = generateProgression(start, step, length);
-  let answer = progression[randomIndex(progression)];
-  const question = modifyArr(progression, answer);
-  answer = answer.toString();
+const description = 'What number is missing in the progression?';
+
+const generateProgression = (number, interval) => {
+  const numbers = [];
+  const progressionLength = 10;
+
+  for (let i = 0; i < progressionLength; i += 1) {
+    const newNumber = number + i * interval;
+    numbers.push(newNumber);
+  }
+  return numbers;
+};
+
+const generateRound = () => {
+  const randomNumber = generateRandomNumber(1, 50);
+  const randomInterval = generateRandomNumber(2, 10);
+  const randomIndex = generateRandomNumber(0, 9);
+
+  const progression = generateProgression(randomNumber, randomInterval);
+  const answer = progression[randomIndex].toString();
+  progression[randomIndex] = '..';
+
+  const question = progression.join(' ');
   return [question, answer];
 };
-const brainProgression = () => {
-  const rules = 'What number is missing in the progression?';
-  runEngine(rules, generateRound);
+
+const launchGame = () => {
+  startGame(description, generateRound);
 };
-export default brainProgression;
+
+export default launchGame;
