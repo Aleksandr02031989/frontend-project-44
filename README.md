@@ -27,17 +27,20 @@ $ brain-calc
 The user is shown two random numbers. He needs to calculate and enter the greatest common divisor of these numbers.
 ```
 $brain-gcd
-```bash
+```
+
 [![asciicast](https://asciinema.org/a/86TW5WlM0qAHXjxozC6vxjiR8.svg)](https://asciinema.org/a/86TW5WlM0qAHXjxozC6vxjiR8)
 ### Game "Arithmetic progression"
 The user is shown a raw of numbers forming an arithmetic progression, in which one of the numbers is replaced by dots. The user needs to find the missing number.
 ```
 $ brain-progression
-```bash
+```
+
 [![asciicast](https://asciinema.org/a/0Yo2aS1gxPXUCskeWgyp8E8vm.svg)](https://asciinema.org/a/0Yo2aS1gxPXUCskeWgyp8E8vm)
 ### Game "Is the number prime?"
 The user is shown a random number. he needs to answer whether it is prime or not.
 ```
 $brain-prime
-```bash
+```
+
 [![asciicast](https://asciinema.org/a/nG9L9cPZwnq5IjqEzFynHGAGs.svg)](https://asciinema.org/a/nG9L9cPZwnq5IjqEzFynHGAGs)
